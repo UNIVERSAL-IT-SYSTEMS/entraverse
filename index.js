@@ -152,7 +152,17 @@ VisitorKeys = {
     71: ['argument']
 };
 
-estraverse.Syntax = Syntax;
-estraverse.VisitorKeys = VisitorKeys;
+Object.keys(estraverse.Syntax).forEach(function (key) {
+    delete estraverse.Syntax[key];
+    delete estraverse.VisitorKeys[key];
+});
+
+Object.keys(Syntax).forEach(function (key) {
+    estraverse.Syntax[key] = Syntax[key];
+});
+
+Object.keys(VisitorKeys).forEach(function (key) {
+    estraverse.VisitorKeys[key] = VisitorKeys[key];
+});
 
 module.exports = estraverse;
