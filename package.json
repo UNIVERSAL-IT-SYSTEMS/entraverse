@@ -1,0 +1,25 @@
+{
+  "name": "entraverse",
+  "version": "0.0.1",
+  "description": "enumerated estraverse",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint *.js bin/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drom/entraverse.git"
+  },
+  "author": "drom",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/drom/entraverse/issues"
+  },
+  "homepage": "https://github.com/drom/entraverse#readme",
+  "dependencies": {
+    "estraverse": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.5.0"
+  }
+}
