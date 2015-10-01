@@ -1,10 +1,10 @@
 {
   "name": "entraverse",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "enumerated estraverse",
   "main": "index.js",
   "scripts": {
-    "test": "eslint *.js bin/*.js"
+    "test": "eslint index.js bin/*.js && mocha"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,14 @@
   },
   "homepage": "https://github.com/drom/entraverse#readme",
   "dependencies": {
-    "estraverse": "^4.1.0"
+    "estraverse": "git+ssh://git@github.com:drom/estraverse.git#master"
   },
   "devDependencies": {
-    "eslint": "^1.5.0"
+    "chai": "^3.3.0",
+    "eslint": "^1.5.0",
+    "esprima": "git+ssh://git@github.com/drom/esprima.git#master",
+    "istanbul": "^0.3.21",
+    "jsof": "0.0.7",
+    "mocha": "^2.3.3"
   }
 }

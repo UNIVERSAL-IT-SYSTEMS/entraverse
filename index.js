@@ -1,6 +1,6 @@
 'use strict';
 
-var estraverse = require('estraverse');
+var estraverse = require('estraverse').cloneEnvironment();
 
 var Syntax, VisitorKeys;
 
@@ -153,6 +153,7 @@ VisitorKeys = {
 };
 
 Object.keys(estraverse.Syntax).forEach(function (key) {
+    if (key === 'Property') { return; }
     delete estraverse.Syntax[key];
     delete estraverse.VisitorKeys[key];
 });
@@ -161,8 +162,10 @@ Object.keys(Syntax).forEach(function (key) {
     estraverse.Syntax[key] = Syntax[key];
 });
 
-Object.keys(VisitorKeys).forEach(function (key) {
-    estraverse.VisitorKeys[key] = VisitorKeys[key];
+Object.keys(Syntax).forEach(function (key) {
+    estraverse.VisitorKeys[Syntax[key]] = VisitorKeys[Syntax[key]];
 });
+
+// console.log(estraverse.Syntax);
 
 module.exports = estraverse;
